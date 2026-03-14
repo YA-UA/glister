@@ -1,0 +1,24 @@
+# robots.txt для Glister
+
+# Дозволити всім роботам індексувати весь сайт
+User-agent: *
+Allow: /
+
+# Не індексувати технічні файли (якщо є)
+Disallow: /js/
+Disallow: /css/
+Disallow: /*.json
+
+# Карта сайту
+Sitemap: https://yoursite.com/sitemap.xml
+
+# Додаткові налаштування для Google
+User-agent: Googlebot
+Allow: /
+
+# Додаткові налаштування для Яндекс
+User-agent: Yandex
+Allow: /
+
+# Час очікування між запитами (в секундах)
+Crawl-delay: 1

@@ -4,7 +4,7 @@
   
   <!-- Головна сторінка -->
   <url>
-    <loc>https://yoursite.com/</loc>
+    <loc>https://https://ya-ua.github.io/glister/</loc>
     <lastmod>2024-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -19,7 +19,7 @@
   
   <!-- Секція замовлення -->
   <url>
-    <loc>https://yoursite.com/#order</loc>
+    <loc>https://https://ya-ua.github.io/glister/#order</loc>
     <lastmod>2024-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>

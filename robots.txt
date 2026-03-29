@@ -10,7 +10,7 @@ Disallow: /css/
 Disallow: /*.json
 
 # Карта сайту
-Sitemap: https://yoursite.com/sitemap.xml
+Sitemap: https://ya-ua.github.io/glister/sitemap.xml
 
 # Додаткові налаштування для Google
 User-agent: Googlebot

@@ -4,25 +4,17 @@
   
   <!-- Головна сторінка -->
   <url>
-    <loc>https://https://ya-ua.github.io/glister/</loc>
-    <lastmod>2024-03-13</lastmod>
+    <loc>https://yaua.github.io/YOUR-REPO-NAME/</loc>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     
     <!-- Зображення на сторінці -->
     <image:image>
-      <image:loc>https://www.genspark.ai/api/files/s/NARKBUHu</image:loc>
+      <image:loc>https://ya-ua.github.io/glister/images/glister-toothpaste.png</image:loc>
       <image:title>Glister зубна паста</image:title>
       <image:caption>Безпечна зубна паста Glister без парабенів</image:caption>
     </image:image>
-  </url>
-  
-  <!-- Секція замовлення -->
-  <url>
-    <loc>https://https://ya-ua.github.io/glister/#order</loc>
-    <lastmod>2024-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
 
 </urlset>

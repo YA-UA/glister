@@ -13,7 +13,7 @@
     <meta property="og:title" content="Glister - Зубна паста для здорових зубів">
     <meta property="og:description" content="Безпечна зубна паста без парабенів, спирту та перекису. Доставка по Україні. Ціна 243 грн.">
     <meta property="og:image" content="images/glister-toothpaste.png">
-    <meta property="og:url" content="https://ya-ua.github.io/glister">
+    <meta property="og:url" content="https://YOUR-USERNAME.github.io/YOUR-REPO-NAME">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="uk_UA">
     
@@ -30,7 +30,7 @@
     <meta http-equiv="content-language" content="uk">
     <meta name="language" content="Ukrainian">
     <meta name="format-detection" content="telephone=yes">
-    <link rel="canonical" href="https://ya-ua.github.io/glister">
+    <link rel="canonical" href="https://YOUR-USERNAME.github.io/YOUR-REPO-NAME">
     
     <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json">
@@ -50,6 +50,34 @@
         "priceCurrency": "UAH",
         "availability": "https://schema.org/InStock",
         "priceValidUntil": "2026-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "UAH"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "UA"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 3,
+              "unitCode": "DAY"
+            }
+          }
+        },
         "seller": {
           "@type": "Organization",
           "name": "Glister Ukraine"
@@ -60,6 +88,87 @@
         "ratingValue": "4.8",
         "reviewCount": "150"
       }
+    }
+    </script>
+    
+    <!-- LocalBusiness Schema для місцевого бізнесу -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Glister Ukraine",
+      "image": "images/glister-toothpaste.png",
+      "@id": "https://YOUR-USERNAME.github.io/YOUR-REPO-NAME",
+      "url": "https://YOUR-USERNAME.github.io/YOUR-REPO-NAME",
+      "telephone": "+380737251639",
+      "priceRange": "243 грн",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Україна",
+        "addressCountry": "UA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.4501,
+        "longitude": 30.5234
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "21:00"
+      },
+      "sameAs": [
+        "viber://chat?number=%2B380737251639"
+      ]
+    }
+    </script>
+    
+    <!-- WebSite Schema для пошукової консолі -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Glister - Зубна паста",
+      "url": "https://YOUR-USERNAME.github.io/YOUR-REPO-NAME",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://YOUR-USERNAME.github.io/YOUR-REPO-NAME?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <!-- BreadcrumbList Schema для навігації -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Головна",
+          "item": "https://YOUR-USERNAME.github.io/YOUR-REPO-NAME"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Замовлення",
+          "item": "https://YOUR-USERNAME.github.io/YOUR-REPO-NAME#order"
+        }
+      ]
     }
     </script>
     

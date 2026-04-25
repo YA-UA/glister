@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Fonts preconnect FIRST for faster render -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <!-- SEO Мета-теги -->
     <title>Glister (Глістер) - Зубна паста без парабенів | Купити в Україні | Доставка НП</title>
     <meta name="description" content="Glister (Глістер, Глистер) - безпечна зубна паста без парабенів, спирту та перекису. Ціна 243 грн. Безкоштовна доставка Новою Поштою по Україні. ☎️ +380 73 725 16 39">
-    <meta name="keywords" content="glister, глистер, глістер, гlistep, пдшіеук, зубна паста, зубная паста, зубна паста glister, зубная паста glister, паста без парабенів, паста без парабенов, glister україна, glister украина, купити glister, купить glister, зубна паста glister, безпечна паста, безопасная паста, натуральна зубна паста, натуральная зубная паста, зубна паста без хімії, органічна зубна паста, органическая зубная паста, глистер украина, глістер україна, glister ua, glister ukraine, паста для зубів, паста для зубов">
+    <meta name="keywords" content="glister, глистер, глістер, зубна паста, зубная паста, зубна паста glister, зубная паста glister, паста без парабенів, паста без парабенов, glister україна, glister украина, купити glister, купить glister, безпечна паста, безопасная паста, натуральна зубна паста, натуральная зубная паста, органічна зубна паста, органическая зубная паста, глістер україна, glister ua, glister ukraine, паста для зубів, паста для зубов">
     
     <!-- Open Graph для соцмереж (Facebook, Viber, Telegram) -->
     <meta property="og:title" content="Glister (Глістер) - Зубна паста для здорових зубів">
     <meta property="og:description" content="Безпечна зубна паста Glister без парабенів, спирту та перекису. Доставка по Україні. Ціна 243 грн.">
     <meta property="og:image" content="images/glister-toothpaste.png">
-    <meta property="og:url" content="https://ya-ua.github.io/glister">
+    <meta property="og:url" content="https://ya-ua.github.io/glister/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="uk_UA">
     
@@ -30,7 +35,8 @@
     <meta http-equiv="content-language" content="uk">
     <meta name="language" content="Ukrainian">
     <meta name="format-detection" content="telephone=yes">
-    <link rel="canonical" href="https://ya-ua.github.io/glister">
+    <!-- FIX: Canonical URL uses consistent trailing slash -->
+    <link rel="canonical" href="https://ya-ua.github.io/glister/">
     
     <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json">
@@ -100,15 +106,15 @@
     }
     </script>
     
-    <!-- LocalBusiness Schema для місцевого бізнесу -->
+    <!-- LocalBusiness Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Glister Ukraine",
       "image": "images/glister-toothpaste.png",
-      "@id": "https://ya-ua.github.io/glister",
-      "url": "https://ya-ua.github.io/glister",
+      "@id": "https://ya-ua.github.io/glister/",
+      "url": "https://ya-ua.github.io/glister/",
       "telephone": "+380737251639",
       "priceRange": "243 грн",
       "address": {
@@ -141,25 +147,27 @@
     }
     </script>
     
-    <!-- WebSite Schema для пошукової консолі -->
+    <!-- WebSite Schema -->
+    <!-- FIX: Replaced placeholder YOUR-USERNAME/YOUR-REPO-NAME with actual URL -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Glister - Зубна паста",
-      "url": "https://ya-ua.github.io/glister",
+      "url": "https://ya-ua.github.io/glister/",
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://YOUR-USERNAME.github.io/YOUR-REPO-NAME?q={search_term_string}"
+          "urlTemplate": "https://ya-ua.github.io/glister/?q={search_term_string}"
         },
         "query-input": "required name=search_term_string"
       }
     }
     </script>
     
-    <!-- BreadcrumbList Schema для навігації -->
+    <!-- BreadcrumbList Schema -->
+    <!-- FIX: All URLs use consistent trailing slash -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -169,28 +177,28 @@
           "@type": "ListItem",
           "position": 1,
           "name": "Головна",
-          "item": "https://ya-ua.github.io/glister"
+          "item": "https://ya-ua.github.io/glister/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Замовлення",
-          "item": "https://ya-ua.github.io/glister#order"
+          "item": "https://ya-ua.github.io/glister/#order"
         }
       ]
     }
     </script>
     
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- EmailJS SDK -->
+    <!-- FIX: EmailJS key removed from HTML. Initialize from your server-side config or
+         restrict this key in EmailJS dashboard to domain ya-ua.github.io only.
+         Replace YOUR_PUBLIC_KEY below with your new rotated key. -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
         (function(){
-            emailjs.init('9BNGBEHyb-u46-7cb'); // Замініть на ваш Public Key з EmailJS
+            emailjs.init('YOUR_NEW_PUBLIC_KEY'); // Rotate key in EmailJS dashboard, then paste here. Restrict to ya-ua.github.io in EmailJS settings.
         })();
     </script>
 </head>
@@ -341,8 +349,9 @@
                 </div>
                 <div class="footer-section">
                     <h4>Контакти</h4>
+                    <!-- FIX: Use consistent E.164 phone format in machine-readable href -->
                     <p>Email: info@glister.ua</p>
-                    <p>Телефон: +380 73 725 16 39</p>
+                    <p>Телефон: <a href="tel:+380737251639">+380 73 725 16 39</a></p>
                     <p><a href="viber://chat?number=%2B380737251639" class="viber-link">💬 Написати в Viber</a></p>
                 </div>
                 <div class="footer-section">
@@ -352,7 +361,8 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Glister. Всі права захищені.</p>
+                <!-- FIX: Dynamic copyright year — never goes stale -->
+                <p>&copy; <span id="copyright-year"></span> Glister. Всі права захищені.</p>
             </div>
         </div>
     </footer>
@@ -364,29 +374,13 @@
         </svg>
     </a>
 
-    <!-- SEO: Приховані ключові слова для різних розкладок клавіатури та транслітерації -->
-    <div style="display:none;" aria-hidden="true">
-        <!-- Українська -->
-        Glister глістер зубна паста купити україна
-        <!-- Російська -->
-        Glister глистер зубная паста купить украина
-        <!-- Неправильна розкладка (англійська замість української) -->
-        пдшіеук пдшіеук екфшт ифіеф зсщшеш екфшті
-        <!-- Неправильна розкладка (українська замість англійської) -->
-        пдшыеук пдшыеук
-        <!-- Варіанти написання -->
-        glister ua glister ukraine глистер украина глістер україна
-        glyster glister toothpaste паста глистер
-        <!-- Популярні помилки -->
-        глістир глистир глистэр glistеr glisteг
-        <!-- Пошукові фрази -->
-        де купити glister зубна паста glister ціна
-        где купить glister зубная паста glister цена
-        glister купити київ glister купить киев
-        зубная паста без парабенов glister
-        зубна паста без парабенів glister
-    </div>
+    <!-- FIX: Removed hidden keyword stuffing div — penalised by Google since 2012 -->
 
     <script src="js/script.js"></script>
+
+    <script>
+        // FIX: Dynamic copyright year
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

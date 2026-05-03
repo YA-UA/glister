@@ -8,7 +8,7 @@ const TELEGRAM_CONFIG = {
     enabled: true,
     // FIX: Токен видалено з коду — він був відкритий публічно.
     // Вставте сюди URL вашого Cloudflare Worker замість прямого виклику Telegram API.
-    workerUrl: 'https://glister-bot.ivanna.workers.dev'
+    workerUrl: 'https://telegramm.movementnow4.workers.dev'
 };
 
 // ============================================

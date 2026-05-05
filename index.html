@@ -208,24 +208,61 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Slider Section -->
         <section class="hero">
             <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1 class="hero-title">Glister</h1>
-                        <p class="hero-subtitle">Зубна паста для здорових і білосніжних зубів</p>
-                        <p class="hero-description">
-                            Багатофункціональна зубна паста Glister Amway з формулою Reminact — зміцнює емаль, підтримує здоров'я ясен і мікробіом порожнини рота. Без SLS, парабенів, спирту та тваринних інгредієнтів.
-                        </p>
-                        <div class="hero-price">
-                            <span class="price-label">Ціна:</span>
-                            <span class="price-value">243 грн</span>
+                <div class="hero-slider" id="heroSlider">
+
+                    <!-- Слайд 1: Glister -->
+                    <div class="hero-slide active">
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <h1 class="hero-title">Glister</h1>
+                                <p class="hero-subtitle">Зубна паста для здорових і білосніжних зубів</p>
+                                <p class="hero-description">
+                                    Багатофункціональна зубна паста Glister Amway з формулою Reminact — зміцнює емаль, підтримує здоров'я ясен і мікробіом порожнини рота. Без SLS, парабенів, спирту та тваринних інгредієнтів.
+                                </p>
+                                <div class="hero-price">
+                                    <span class="price-label">Ціна:</span>
+                                    <span class="price-value">243 грн</span>
+                                </div>
+                                <a href="#order" class="btn-cta">Замовити зараз</a>
+                            </div>
+                            <div class="hero-image">
+                                <img src="images/glister-toothpaste.png" alt="Glister зубна паста Amway без парабенів" loading="eager" onerror="this.style.display='none'">
+                            </div>
                         </div>
-                        <a href="#order" class="btn-cta">Замовити зараз</a>
                     </div>
-                    <div class="hero-image">
-                        <img src="images/glister-toothpaste.png" alt="Glister (Глістер) зубна паста без парабенів - купити в Україні" loading="eager" onerror="this.style.display='none';console.error('Image failed to load')">
+
+                    <!-- Слайд 2: Dish Drops -->
+                    <div class="hero-slide">
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <h1 class="hero-title">Dish Drops™</h1>
+                                <p class="hero-subtitle">Концентрована рідина для миття посуду</p>
+                                <p class="hero-description">
+                                    Ефективний концентрат з формулою Bioquest — без їдких кислот, лугів, фосфатів та хлору. Безпечний для миття дитячого посуду та іграшок з перших днів життя.
+                                </p>
+                                <div class="hero-price">
+                                    <span class="price-label">Ціна:</span>
+                                    <span class="price-value">384 грн</span>
+                                </div>
+                                <a href="#order" class="btn-cta">Замовити зараз</a>
+                            </div>
+                            <div class="hero-image">
+                                <img src="images/dish-drops.jpg" alt="Dish Drops Amway концентрована рідина для миття посуду" loading="lazy" onerror="this.style.display='none'">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Кнопки навігації -->
+                    <button class="slider-btn slider-btn-prev" id="sliderPrev" aria-label="Попередній товар">&#8249;</button>
+                    <button class="slider-btn slider-btn-next" id="sliderNext" aria-label="Наступний товар">&#8250;</button>
+
+                    <!-- Точки -->
+                    <div class="slider-dots">
+                        <button class="slider-dot active" data-index="0" aria-label="Товар 1"></button>
+                        <button class="slider-dot" data-index="1" aria-label="Товар 2"></button>
                     </div>
                 </div>
             </div>
@@ -375,6 +412,108 @@
     <script src="js/script.js"></script>
     <script>
         document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+        // ============================================
+        // HERO SLIDER
+        // ============================================
+        (function() {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.slider-dot');
+            let current = 0;
+            let autoplayTimer;
+
+            function goTo(index) {
+                slides[current].classList.remove('active');
+                dots[current].classList.remove('active');
+                current = (index + slides.length) % slides.length;
+                slides[current].classList.add('active');
+                dots[current].classList.add('active');
+                resetAutoplay();
+            }
+
+            function resetAutoplay() {
+                clearInterval(autoplayTimer);
+                autoplayTimer = setInterval(() => goTo(current + 1), 5000);
+            }
+
+            document.getElementById('sliderNext').addEventListener('click', () => goTo(current + 1));
+            document.getElementById('sliderPrev').addEventListener('click', () => goTo(current - 1));
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => goTo(+dot.dataset.index));
+            });
+
+            // Свайп на мобільних
+            let touchStartX = 0;
+            const slider = document.getElementById('heroSlider');
+            slider.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+            slider.addEventListener('touchend', e => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+            }, { passive: true });
+
+            resetAutoplay();
+        })();
     </script>
+
+    <style>
+        /* Slider styles */
+        .hero-slider {
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-slide {
+            display: none;
+        }
+        .hero-slide.active {
+            display: block;
+            animation: slideInRight 0.4s ease;
+        }
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(40px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.85);
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            font-size: 24px;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            transition: background 0.2s;
+        }
+        .slider-btn:hover { background: #fff; }
+        .slider-btn-prev { left: 8px; }
+        .slider-btn-next { right: 8px; }
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 0 4px;
+        }
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: none;
+            background: #ccc;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .slider-dot.active {
+            background: #00a8e8;
+            transform: scale(1.3);
+        }
+        @media (max-width: 600px) {
+            .slider-btn { width: 36px; height: 36px; font-size: 20px; }
+        }
+    </style>
 </body>
 </html>

@@ -341,15 +341,15 @@
         <section class="order" id="order">
             <div class="container">
                 <div class="order-card">
-                    <h2 class="order-title">Замовити Glister</h2>
+                    <h2 class="order-title">Замовити товар</h2>
                     <div class="order-content">
                         <div class="order-image">
-                            <img src="images/glister-toothpaste.png" alt="Glister (Глістер) зубна паста без парабенів - купити в Україні" loading="lazy" onerror="this.style.display='none';console.error('Image failed to load')">
+                            <img id="orderImg" src="images/glister-toothpaste.png" alt="Glister зубна паста" loading="lazy" onerror="this.style.display='none'">
                         </div>
                         <div class="order-details">
-                            <h3>Зубна паста Glister Amway 151 мл</h3>
+                            <h3 id="orderName">Зубна паста Glister Amway 151 мл</h3>
                             <div class="order-benefits">
-                                <ul>
+                                <ul id="orderBenefits">
                                     <li>✓ Без парабенів</li>
                                     <li>✓ Без спирту</li>
                                     <li>✓ Без перекису</li>
@@ -358,9 +358,11 @@
                                 </ul>
                             </div>
                             <div class="order-price-block">
-                                <span class="order-price">243 грн</span>
+                                <span class="order-price" id="orderPrice">243 грн</span>
                             </div>
                             <form class="order-form" id="orderForm">
+                                <input type="hidden" id="orderProductName" name="product_name" value="Зубна паста Glister Amway 151 мл">
+                                <input type="hidden" id="orderProductPrice" name="product_price" value="243 грн">
                                 <input type="text" name="name" placeholder="Ім'я та прізвище" required>
                                 <input type="tel" name="phone" placeholder="Ваш телефон" required>
                                 <input type="text" name="novaposhta" placeholder="Відділення Нової Пошти" required>
@@ -414,6 +416,53 @@
         document.getElementById('copyright-year').textContent = new Date().getFullYear();
 
         // ============================================
+        // ДАНІ ТОВАРІВ
+        // ============================================
+        const products = [
+            {
+                name: 'Зубна паста Glister Amway 151 мл',
+                price: '243 грн',
+                image: 'images/glister-toothpaste.png',
+                imageAlt: 'Glister зубна паста Amway без парабенів',
+                benefits: [
+                    '✓ Без парабенів',
+                    '✓ Без спирту',
+                    '✓ Без перекису',
+                    '✓ Без цукру',
+                    '✓ Без інгредієнтів тваринного походження'
+                ]
+            },
+            {
+                name: 'Dish Drops™ Концентрована рідина для миття посуду',
+                price: '384 грн',
+                image: 'images/dish-drops.jpg',
+                imageAlt: 'Dish Drops Amway концентрат для миття посуду',
+                benefits: [
+                    '✓ Без фосфатів та хлору',
+                    '✓ Алое вера та буролистка',
+                    '✓ Безпечний для дитячого посуду',
+                    '✓ Працює в холодній воді',
+                    '✓ Без їдких кислот та лугів'
+                ]
+            }
+        ];
+
+        // ============================================
+        // ОНОВЛЕННЯ ФОРМИ ЗАМОВЛЕННЯ
+        // ============================================
+        function updateOrderSection(index) {
+            const p = products[index];
+            document.getElementById('orderImg').src = p.image;
+            document.getElementById('orderImg').alt = p.imageAlt;
+            document.getElementById('orderName').textContent = p.name;
+            document.getElementById('orderPrice').textContent = p.price;
+            document.getElementById('orderProductName').value = p.name;
+            document.getElementById('orderProductPrice').value = p.price;
+            const ul = document.getElementById('orderBenefits');
+            ul.innerHTML = p.benefits.map(b => `<li>${b}</li>`).join('');
+        }
+
+        // ============================================
         // HERO SLIDER
         // ============================================
         (function() {
@@ -428,6 +477,7 @@
                 current = (index + slides.length) % slides.length;
                 slides[current].classList.add('active');
                 dots[current].classList.add('active');
+                updateOrderSection(current);
                 resetAutoplay();
             }
 

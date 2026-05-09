@@ -15,7 +15,7 @@
     <!-- SEO Мета-теги -->
     <title>Glister Amway (Глістер) - Багатофункціональна зубна паста Reminact | Купити в Україні | Доставка НП</title>
     <meta name="description" content="Glister Amway (Глістер) — багатофункціональна зубна паста з формулою Reminact. Без парабенів, SLS, спирту та перекису. 151 мл, 243 грн. Доставка Новою Поштою по Україні. ☎️ +380 73 725 16 39">
-    <meta name="keywords" content="amway купить, амвей , glister amway , amway home , amway украина, amway україна , amway дезодорант, glister , глістер, глистер, зубна паста glister, зубная паста глистер, amway glister, амвей глістер, амвей зубна паста, glister 151 мл, глістер 151 мл, глістер 200г, багатофункціональна зубна паста, многофункциональная зубная паста, зубна паста без SLS, паста без лаурилсульфату, зубна паста без парабенів, зубная паста без парабенов, зубна паста без спирту, зубна паста без перекису, зубна паста для веганів, веганська зубна паста, зубна паста з фтором, зубна паста reminact, reminact формула, зубна паста мікробіом, здоров'я ясен паста, зубна паста для чутливих зубів, паста для чутливої емалі, зубна паста накладений платіж, зубна паста доставка нп, купити glister україна, glister ціна україна, glister ua, glister ukraine, amway ukraine, зубна паста, зубная паста, паста для зубів, паста для зубов">
+    <meta name="keywords" content="glister, глістер, глистер, зубна паста glister, зубная паста глистер, amway glister, амвей глістер, амвей зубна паста, glister 151 мл, глістер 151 мл, глістер 200г, багатофункціональна зубна паста, многофункциональная зубная паста, зубна паста без SLS, паста без лаурилсульфату, зубна паста без парабенів, зубная паста без парабенов, зубна паста без спирту, зубна паста без перекису, зубна паста для веганів, веганська зубна паста, зубна паста з фтором, зубна паста reminact, reminact формула, зубна паста мікробіом, здоров'я ясен паста, зубна паста для чутливих зубів, паста для чутливої емалі, зубна паста накладений платіж, зубна паста доставка нп, купити glister україна, glister ціна україна, glister ua, glister ukraine, amway ukraine, зубна паста, зубная паста, паста для зубів, паста для зубов">
     
     <!-- Open Graph для соцмереж (Facebook, Viber, Telegram) -->
     <meta property="og:title" content="Glister (Глістер) - Зубна паста для здорових зубів">
@@ -269,6 +269,24 @@
                         <a href="#order" class="btn-cta" onclick="selectProduct('gh')">Замовити</a>
                     </div>
 
+                    <!-- Товар 4: Nutrilite Омега-3 -->
+                    <div class="product-card" id="card-omega">
+                        <div class="product-img-wrap">
+                            <img src="images/omega3.jpg" alt="Nutrilite Омега-3 потрійної сили Amway" loading="lazy" onerror="this.style.display='none'">
+                        </div>
+                        <h2 class="product-title">Nutrilite™ Омега-3</h2>
+                        <p class="product-subtitle">Омега-3 потрійної сили — серце, мозок і зір</p>
+                        <p class="product-desc">ЕПК і ДГК з риб'ячого жиру + олія насіння чіа. Технологія AquaCelle® — краще засвоєння, м'який вплив на шлунок, без рибного присмаку.</p>
+                        <ul class="product-features">
+                            <li>✓ Технологія AquaCelle®</li>
+                            <li>✓ ЕПК + ДГК + олія чіа</li>
+                            <li>✓ Сталий розвиток NutriCert™</li>
+                            <li>✓ 30 капсул / 1 на добу</li>
+                        </ul>
+                        <div class="product-price">1113 грн</div>
+                        <a href="#order" class="btn-cta" onclick="selectProduct('omega')">Замовити</a>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -373,6 +391,13 @@
                                 <span class="check-price">336 грн</span>
                                 <span class="check-mark">✓</span>
                             </label>
+                            <label class="order-checkbox-card" id="check-omega">
+                                <input type="checkbox" id="chk-omega" onchange="updateOrder()">
+                                <img src="images/omega3.jpg" alt="Nutrilite Омега-3" onerror="this.style.display='none'">
+                                <span class="check-name">Nutrilite™ Омега-3</span>
+                                <span class="check-price">1113 грн</span>
+                                <span class="check-mark">✓</span>
+                            </label>
                         </div>
                         <div class="order-total-row">
                             <span>Разом:</span>
@@ -442,19 +467,23 @@
             const chkGlister  = document.getElementById('chk-glister');
             const chkDish     = document.getElementById('chk-dish');
             const chkGh       = document.getElementById('chk-gh');
+            const chkOmega    = document.getElementById('chk-omega');
             const cardGlister = document.getElementById('check-glister');
             const cardDish    = document.getElementById('check-dish');
             const cardGh      = document.getElementById('check-gh');
+            const cardOmega   = document.getElementById('check-omega');
 
             cardGlister.classList.toggle('selected', chkGlister.checked);
             cardDish.classList.toggle('selected', chkDish.checked);
             cardGh.classList.toggle('selected', chkGh.checked);
+            cardOmega.classList.toggle('selected', chkOmega.checked);
 
             let total = 0;
             const items = [];
-            if (chkGlister.checked) { total += 243; items.push('Glister™ — 243 грн'); }
-            if (chkDish.checked)    { total += 384; items.push('Dish Drops™ — 384 грн'); }
-            if (chkGh.checked)      { total += 336; items.push('g&h™ Дезодорант — 336 грн'); }
+            if (chkGlister.checked) { total += 243;  items.push('Glister™ — 243 грн'); }
+            if (chkDish.checked)    { total += 384;  items.push('Dish Drops™ — 384 грн'); }
+            if (chkGh.checked)      { total += 336;  items.push('g&h™ Дезодорант — 336 грн'); }
+            if (chkOmega.checked)   { total += 1113; items.push('Nutrilite™ Омега-3 — 1113 грн'); }
 
             document.getElementById('orderTotal').textContent = total ? total + ' грн' : '0 грн';
         }
@@ -463,6 +492,7 @@
             document.getElementById('chk-glister').checked = (type === 'glister');
             document.getElementById('chk-dish').checked    = (type === 'dish');
             document.getElementById('chk-gh').checked      = (type === 'gh');
+            document.getElementById('chk-omega').checked   = (type === 'omega');
             updateOrder();
         }
 
@@ -478,8 +508,9 @@
             const chkGlister = document.getElementById('chk-glister').checked;
             const chkDish    = document.getElementById('chk-dish').checked;
             const chkGh      = document.getElementById('chk-gh').checked;
+            const chkOmega   = document.getElementById('chk-omega').checked;
 
-            if (!chkGlister && !chkDish && !chkGh) {
+            if (!chkGlister && !chkDish && !chkGh && !chkOmega) {
                 document.getElementById('orderSelectError').style.display = 'block';
                 event.preventDefault();
                 return;
@@ -490,7 +521,8 @@
             if (chkGlister) items.push('Glister™ 151 мл — 243 грн');
             if (chkDish)    items.push('Dish Drops™ — 384 грн');
             if (chkGh)      items.push('g&h™ Дезодорант — 336 грн');
-            const total = (chkGlister ? 243 : 0) + (chkDish ? 384 : 0) + (chkGh ? 336 : 0);
+            if (chkOmega)   items.push('Nutrilite™ Омега-3 — 1113 грн');
+            const total = (chkGlister ? 243 : 0) + (chkDish ? 384 : 0) + (chkGh ? 336 : 0) + (chkOmega ? 1113 : 0);
 
             // Додаємо приховані поля для script.js
             let pn = document.getElementById('_selectedProducts');
@@ -519,10 +551,10 @@
         /* ---- Картки товарів поруч ---- */
         .products-row {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 24px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
             .products-row { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 580px) {
@@ -604,11 +636,14 @@
         }
         .order-checkboxes {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: repeat(4, 1fr);
             gap: 16px;
             margin-bottom: 16px;
         }
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
+            .order-checkboxes { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 400px) {
             .order-checkboxes { grid-template-columns: 1fr; }
         }
         .order-checkbox-card {

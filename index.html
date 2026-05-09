@@ -11,6 +11,660 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet"></noscript>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Fonts: preconnect + тільки потрібні накреслення + display=swap -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- FIX: Завантажуємо лише 4 накреслення замість 6 — економить ~15 KiB і ~80 мс -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+    <!-- SEO Мета-теги -->
+    <title>Glister Amway (Глістер) - Багатофункціональна зубна паста Reminact | Купити в Україні | Доставка НП</title>
+    <meta name="description" content="Glister Amway (Глістер) — багатофункціональна зубна паста з формулою Reminact. Без парабенів, SLS, спирту та перекису. 151 мл, 243 грн. Доставка Новою Поштою по Україні. ☎️ +380 73 725 16 39">
+    <meta name="keywords" content="glister, глістер, глистер, зубна паста glister, зубная паста глистер, amway glister, амвей глістер, амвей зубна паста, glister 151 мл, глістер 151 мл, глістер 200г, багатофункціональна зубна паста, многофункциональная зубная паста, зубна паста без SLS, паста без лаурилсульфату, зубна паста без парабенів, зубная паста без парабенов, зубна паста без спирту, зубна паста без перекису, зубна паста для веганів, веганська зубна паста, зубна паста з фтором, зубна паста reminact, reminact формула, зубна паста мікробіом, здоров'я ясен паста, зубна паста для чутливих зубів, паста для чутливої емалі, зубна паста накладений платіж, зубна паста доставка нп, купити glister україна, glister ціна україна, glister ua, glister ukraine, amway ukraine, зубна паста, зубная паста, паста для зубів, паста для зубов">
+    
+    <!-- Open Graph для соцмереж (Facebook, Viber, Telegram) -->
+    <meta property="og:title" content="Glister (Глістер) - Зубна паста для здорових зубів">
+    <meta property="og:description" content="Безпечна зубна паста Glister без парабенів, спирту та перекису. Доставка по Україні. Ціна 243 грн.">
+    <!-- FIX: Absolute URL для og:image — відносний шлях не працює в соцмережах -->
+    <meta property="og:image" content="https://ya-ua.github.io/glister/images/glister-toothpaste.png">
+    <meta property="og:url" content="https://ya-ua.github.io/glister/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="uk_UA">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Glister - Зубна паста">
+    <meta name="twitter:description" content="Безпечна зубна паста без парабенів. Ціна 243 грн.">
+    <!-- FIX: Absolute URL для twitter:image -->
+    <meta name="twitter:image" content="https://ya-ua.github.io/glister/images/glister-toothpaste.png">
+    
+    <!-- Додаткові SEO -->
+    <meta name="author" content="Glister Ukraine">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta http-equiv="content-language" content="uk">
+    <meta name="language" content="Ukrainian">
+    <meta name="format-detection" content="telephone=yes">
+    <link rel="canonical" href="https://ya-ua.github.io/glister/">
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Glister Зубна паста",
+      "alternateName": ["Глістер зубна паста", "Глистер зубна паста", "Glister toothpaste"],
+      "image": "https://ya-ua.github.io/glister/images/glister-toothpaste.png",
+      "description": "Безпечна зубна паста Glister (Глістер) без парабенів, спирту та перекису. Натуральні інгредієнти для здорових зубів. Доступна для замовлення в Україні.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Glister"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "243",
+        "priceCurrency": "UAH",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2026-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "UAH"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "UA"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 2,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 3,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "UA",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 14,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        },
+        "seller": {
+          "@type": "Organization",
+          "name": "Glister Ukraine"
+        }
+      }
+    }
+    </script>
+    
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Glister Ukraine",
+      "image": "https://ya-ua.github.io/glister/images/glister-toothpaste.png",
+      "@id": "https://ya-ua.github.io/glister/",
+      "url": "https://ya-ua.github.io/glister/",
+      "telephone": "+380737251639",
+      "priceRange": "243 грн",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Україна",
+        "addressCountry": "UA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.4501,
+        "longitude": 30.5234
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "21:00"
+      },
+      "sameAs": [
+        "viber://chat?number=%2B380737251639"
+      ]
+    }
+    </script>
+    
+    <!-- WebSite Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Glister - Зубна паста",
+      "url": "https://ya-ua.github.io/glister/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://ya-ua.github.io/glister/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Головна",
+          "item": "https://ya-ua.github.io/glister/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Замовлення",
+          "item": "https://ya-ua.github.io/glister/#order"
+        }
+      ]
+    }
+    </script>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- EmailJS SDK -->
+    <!-- ВАЖЛИВО: Обмежте ключ доменом ya-ua.github.io в налаштуваннях EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init('9BNGBEHyb-u46-7cb');
+        })();
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">GLISTER</div>
+                <a href="#order" class="btn-primary">Замовити</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Products Section -->
+        <section class="hero">
+            <div class="container">
+                <h2 class="section-title" style="text-align:center; margin-bottom: 8px;">Наші товари</h2>
+                <p class="section-subtitle" style="text-align:center; margin-bottom: 32px;">Продукція Amway — безпечний склад для всієї родини</p>
+                <div class="products-row">
+
+                    <!-- Товар 1: Glister -->
+                    <div class="product-card" id="card-glister">
+                        <div class="product-img-wrap">
+                            <img src="images/glister-toothpaste.png" alt="Glister зубна паста Amway" loading="eager" onerror="this.style.display='none'">
+                        </div>
+                        <h2 class="product-title">Glister™</h2>
+                        <p class="product-subtitle">Зубна паста для здорових і білосніжних зубів</p>
+                        <p class="product-desc">Багатофункціональна зубна паста з формулою Reminact — без SLS, парабенів, спирту та тваринних інгредієнтів.</p>
+                        <ul class="product-features">
+                            <li>✓ Без парабенів і SLS</li>
+                            <li>✓ Формула Reminact</li>
+                            <li>✓ Зміцнює емаль</li>
+                            <li>✓ Підходить веганам</li>
+                        </ul>
+                        <div class="product-price">243 грн</div>
+                        <a href="#order" class="btn-cta" onclick="selectProduct('glister')">Замовити</a>
+                    </div>
+
+                    <!-- Товар 2: Dish Drops -->
+                    <div class="product-card" id="card-dish">
+                        <div class="product-img-wrap">
+                            <img src="images/dish-drops.jpg" alt="Dish Drops Amway рідина для миття посуду" loading="lazy" onerror="this.style.display='none'">
+                        </div>
+                        <h2 class="product-title">Dish Drops™</h2>
+                        <p class="product-subtitle">Концентрована рідина для миття посуду</p>
+                        <p class="product-desc">Ефективний концентрат з формулою Bioquest — без фосфатів, хлору та їдких кислот. Безпечний для дитячого посуду.</p>
+                        <ul class="product-features">
+                            <li>✓ Без фосфатів та хлору</li>
+                            <li>✓ Алое вера та буролистка</li>
+                            <li>✓ Безпечний для дітей</li>
+                            <li>✓ Працює в холодній воді</li>
+                        </ul>
+                        <div class="product-price">384 грн</div>
+                        <a href="#order" class="btn-cta" onclick="selectProduct('dish')">Замовити</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits">
+            <div class="container">
+                <h2 class="section-title">Чому Glister?</h2>
+                <p class="section-subtitle">Безпечний склад для вашого здоров'я — без SLS, парабенів та тваринних інгредієнтів</p>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🦷</div>
+                        <h3 class="benefit-title">Формула Reminact</h3>
+                        <p class="benefit-description">Клінічно підтверджена ефективність — зміцнює емаль і видаляє до 86% нальоту</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🚫</div>
+                        <h3 class="benefit-title">Без парабенів і SLS</h3>
+                        <p class="benefit-description">Не містить шкідливих консервантів та лаурилсульфату натрію</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🍃</div>
+                        <h3 class="benefit-title">Без спирту</h3>
+                        <p class="benefit-description">М'який догляд без подразнень</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💧</div>
+                        <h3 class="benefit-title">Без перекису</h3>
+                        <p class="benefit-description">Безпечно для емалі</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🍬</div>
+                        <h3 class="benefit-title">Без цукру</h3>
+                        <p class="benefit-description">Захищає від карієсу</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🌱</div>
+                        <h3 class="benefit-title">Без інгредієнтів тваринного походження</h3>
+                        <p class="benefit-description">Підходить для веганів</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Переваги Glister</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-number">01</div>
+                        <h3 class="feature-title">Ефективне очищення</h3>
+                        <p class="feature-text">Видаляє наліт і забезпечує свіжість дихання на довгий час</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">02</div>
+                        <h3 class="feature-title">Зміцнення емалі</h3>
+                        <p class="feature-text">Захищає і зміцнює зубну емаль щодня</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">03</div>
+                        <h3 class="feature-title">Природні компоненти</h3>
+                        <p class="feature-text">Безпечна формула з натуральними інгредієнтами</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">04</div>
+                        <h3 class="feature-title">Для всієї родини</h3>
+                        <p class="feature-text">Підходить для дорослих і дітей</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Order Section -->
+        <section class="order" id="order">
+            <div class="container">
+                <div class="order-card">
+                    <h2 class="order-title">Оформити замовлення</h2>
+
+                    <!-- Вибір товарів -->
+                    <div class="order-select-products">
+                        <p class="order-select-label">Оберіть товари:</p>
+                        <div class="order-checkboxes">
+                            <label class="order-checkbox-card" id="check-glister">
+                                <input type="checkbox" id="chk-glister" checked onchange="updateOrder()">
+                                <img src="images/glister-toothpaste.png" alt="Glister" onerror="this.style.display='none'">
+                                <span class="check-name">Glister™</span>
+                                <span class="check-price">243 грн</span>
+                                <span class="check-mark">✓</span>
+                            </label>
+                            <label class="order-checkbox-card" id="check-dish">
+                                <input type="checkbox" id="chk-dish" onchange="updateOrder()">
+                                <img src="images/dish-drops.jpg" alt="Dish Drops" onerror="this.style.display='none'">
+                                <span class="check-name">Dish Drops™</span>
+                                <span class="check-price">384 грн</span>
+                                <span class="check-mark">✓</span>
+                            </label>
+                        </div>
+                        <div class="order-total-row">
+                            <span>Разом:</span>
+                            <span class="order-total" id="orderTotal">243 грн</span>
+                        </div>
+                        <p class="order-select-error" id="orderSelectError" style="display:none; color:#e53935; font-size:14px; margin-top:8px;">
+                            ⚠️ Оберіть хоча б один товар
+                        </p>
+                    </div>
+
+                    <!-- Форма -->
+                    <form class="order-form" id="orderForm">
+                        <input type="text" name="name" placeholder="Ім'я та прізвище" required>
+                        <input type="tel" name="phone" placeholder="Ваш телефон" required>
+                        <input type="text" name="novaposhta" placeholder="Відділення Нової Пошти" required>
+                        <textarea name="other_product" placeholder="Коментар (необов'язково)" rows="3"></textarea>
+                        <div class="delivery-note">
+                            <p>💝 Доставка накладеним платежем НП буде віднята від вартості вашого замовлення, це наш комплімент вам!</p>
+                        </div>
+                        <button type="submit" class="btn-submit">Оформити замовлення</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GLISTER</h3>
+                    <p>Зубна паста для здорових зубів</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакти</h4>
+                    <p>Email: info@glister.ua</p>
+                    <p>Телефон: <a href="tel:+380737251639">+380 73 725 16 39</a></p>
+                    <p><a href="viber://chat?number=%2B380737251639" class="viber-link">💬 Написати в Viber</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Інформація</h4>
+                    <p>Багатофункціональна зубна паста Glister Amway 151 мл</p>
+                    <p>Безпечний склад без SLS, парабенів та тваринних інгредієнтів</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024-<span id="copyright-year"></span> Glister</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Viber Button -->
+    <a href="viber://chat?number=%2B380737251639" class="viber-float" target="_blank" rel="noopener" aria-label="Написати в Viber">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="white">
+            <path d="M11.4 0C9.473.028 5.333.344 3.02 2.467 1.302 4.187.696 6.7.633 9.817.57 12.933.488 18.617 6.55 20.42h.005l-.004 2.539s-.037.99.613 1.192c.787.244 1.25-.512 2-.988.412-.267.977-.74 1.404-1.08 3.857.32 6.82-.408 7.16-.52.776-.253 5.168-.816 5.888-6.653.74-6.02-.36-9.83-2.34-11.546-.596-.55-3.006-2.3-8.375-2.32 0 0-.395-.025-1.037-.017zm.058 1.693c.545-.004.88.017.88.017 4.542.02 6.717 1.388 7.222 1.846 1.675 1.435 2.53 4.868 1.906 9.897-.596 4.842-4.17 5.2-4.83 5.42-.29.097-2.935.735-6.218.488 0 0-2.46 2.982-3.23 3.765-.123.125-.27.18-.37.153-.146-.04-.188-.196-.18-.432l.02-4.108c-4.778-1.503-4.502-6.216-4.447-8.804.056-2.588.566-4.675 1.98-6.158 1.904-1.686 5.17-1.97 6.857-2.003.09-.002.176-.006.26-.008.085-.002.17-.003.254-.005l.082-.002h.006l.002-.002.002-.002zm-.126 2.553c-.287.016-.57.088-.722.276-.18.22-.148.502-.116.77.062.538.132 1.02.45 1.452.736.997 2.036 1.605 3.314 2.03.595.198 1.23.362 1.875.297.76-.077 1.36-.74 1.485-1.49.093-.564-.42-1.02-.96-1.172-.585-.166-1.17-.332-1.755-.498-.49-.14-1.01.087-1.28.508-.19.297-.34.595-.448.918-.045.137-.095.278-.176.397-.084.125-.23.21-.387.15-.62-.235-1.23-.55-1.754-.98-.522-.43-.99-.976-1.3-1.607-.078-.16-.03-.35.07-.494.106-.152.23-.29.354-.428.24-.27.49-.54.592-.89.11-.377-.02-.792-.293-1.068-.375-.38-.82-.67-1.29-.885-.16-.073-.332-.11-.505-.1-.025 0-.05.002-.075.004-.025.002-.05.004-.075.006h-.003l-.002.002z"/>
+        </svg>
+    </a>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+        // ============================================
+        // ВИБІР ТОВАРІВ — чекбокси
+        // ============================================
+        function updateOrder() {
+            const chkGlister = document.getElementById('chk-glister');
+            const chkDish    = document.getElementById('chk-dish');
+            const cardGlister = document.getElementById('check-glister');
+            const cardDish    = document.getElementById('check-dish');
+
+            cardGlister.classList.toggle('selected', chkGlister.checked);
+            cardDish.classList.toggle('selected', chkDish.checked);
+
+            let total = 0;
+            const items = [];
+            if (chkGlister.checked) { total += 243; items.push('Glister™ — 243 грн'); }
+            if (chkDish.checked)    { total += 384; items.push('Dish Drops™ — 384 грн'); }
+
+            document.getElementById('orderTotal').textContent = total ? total + ' грн' : '0 грн';
+        }
+
+        // Вибір товару при натисканні кнопки "Замовити" на картці
+        function selectProduct(type) {
+            document.getElementById('chk-glister').checked = (type === 'glister' || type === 'both');
+            document.getElementById('chk-dish').checked    = (type === 'dish'    || type === 'both');
+            updateOrder();
+        }
+
+        // Ініціалізація
+        updateOrder();
+
+        // ============================================
+        // ВІДПРАВКА ФОРМИ — передаємо вибрані товари
+        // ============================================
+        // Перехоплюємо submit щоб додати вибрані товари в orderData
+        // (основний обробник в script.js, але ми розширюємо його через CustomEvent)
+        document.getElementById('orderForm').addEventListener('submit', function() {
+            const chkGlister = document.getElementById('chk-glister').checked;
+            const chkDish    = document.getElementById('chk-dish').checked;
+
+            // Перевірка — хоча б один товар
+            if (!chkGlister && !chkDish) {
+                document.getElementById('orderSelectError').style.display = 'block';
+                event.preventDefault();
+                return;
+            }
+            document.getElementById('orderSelectError').style.display = 'none';
+
+            // Записуємо вибрані товари в поле коментаря якщо воно порожнє
+            const items = [];
+            if (chkGlister) items.push('Glister™ 151 мл — 243 грн');
+            if (chkDish)    items.push('Dish Drops™ — 384 грн');
+            const total = (chkGlister ? 243 : 0) + (chkDish ? 384 : 0);
+
+            // Додаємо приховані поля для script.js
+            let pn = document.getElementById('_selectedProducts');
+            if (!pn) {
+                pn = document.createElement('input');
+                pn.type = 'hidden';
+                pn.name = 'product_name';
+                pn.id   = '_selectedProducts';
+                this.appendChild(pn);
+            }
+            pn.value = items.join(' + ');
+
+            let pp = document.getElementById('_selectedPrice');
+            if (!pp) {
+                pp = document.createElement('input');
+                pp.type = 'hidden';
+                pp.name = 'product_price';
+                pp.id   = '_selectedPrice';
+                this.appendChild(pp);
+            }
+            pp.value = total + ' грн';
+        }, true); // true = перехоплюємо ДО обробника в script.js
+    </script>
+
+    <style>
+        /* ---- Картки товарів поруч ---- */
+        .products-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+        @media (max-width: 680px) {
+            .products-row { grid-template-columns: 1fr; }
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 28px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+        }
+        .product-img-wrap {
+            width: 180px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        .product-img-wrap img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .product-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+        }
+        .product-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .product-desc {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 14px;
+            line-height: 1.5;
+        }
+        .product-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 16px;
+            text-align: left;
+            width: 100%;
+        }
+        .product-features li {
+            font-size: 13px;
+            color: #444;
+            padding: 3px 0;
+        }
+        .product-price {
+            font-size: 26px;
+            font-weight: 800;
+            color: #00a8e8;
+            margin-bottom: 16px;
+        }
+
+        /* ---- Чекбокси вибору товарів ---- */
+        .order-select-products {
+            margin-bottom: 28px;
+        }
+        .order-select-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 14px;
+        }
+        .order-checkboxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        @media (max-width: 500px) {
+            .order-checkboxes { grid-template-columns: 1fr; }
+        }
+        .order-checkbox-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 16px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            transition: border-color 0.2s, background 0.2s;
+            user-select: none;
+        }
+        .order-checkbox-card input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            width: 0; height: 0;
+        }
+        .order-checkbox-card img {
+            width: 80px;
+            height: 90px;
+            object-fit: contain;
+            margin-bottom: 8px;
+        }
+        .check-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 4px;
+        }
+        .check-price {
+            font-size: 16px;
+            font-weight: 800;
+            color: #00a8e8;
+        }
+        .check-mark {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            background: #00a8e8;
+            color: #fff;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            font-size: 13px;
+            align-items: center;
+            justify-content: center;
+        }
+        .order-checkbox-card.selected {
+            border-color: #00a8e8;
+            background: #f0faff;
+        }
+        .order-checkbox-card.selected .check-mark {
+            display: flex;
+        }
+        .order-total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-top: 1px solid #eee;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+        .order-total {
+            font-size: 22px;
+            font-weight: 800;
+            color: #00a8e8;
+        }
+    </style>
+</body>
+</html>
 
     <!-- SEO Мета-теги -->
     <title>Glister Amway (Глістер) - Багатофункціональна зубна паста Reminact | Купити в Україні | Доставка НП</title>

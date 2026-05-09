@@ -368,36 +368,57 @@
 
                     <!-- Вибір товарів -->
                     <div class="order-select-products">
-                        <p class="order-select-label">Оберіть товари:</p>
+                        <p class="order-select-label">Оберіть товари та кількість:</p>
                         <div class="order-checkboxes">
-                            <label class="order-checkbox-card" id="check-glister">
-                                <input type="checkbox" id="chk-glister" checked onchange="updateOrder()">
+
+                            <div class="order-checkbox-card" id="check-glister">
+                                <span class="check-mark">✓</span>
                                 <img src="images/glister-toothpaste.png" alt="Glister" onerror="this.style.display='none'">
                                 <span class="check-name">Glister™</span>
-                                <span class="check-price">243 грн</span>
+                                <span class="check-price" data-price="243">243 грн</span>
+                                <div class="qty-control">
+                                    <button type="button" class="qty-btn" onclick="changeQty('glister', -1)">−</button>
+                                    <span class="qty-value" id="qty-glister">1</span>
+                                    <button type="button" class="qty-btn" onclick="changeQty('glister', 1)">+</button>
+                                </div>
+                            </div>
+
+                            <div class="order-checkbox-card" id="check-dish">
                                 <span class="check-mark">✓</span>
-                            </label>
-                            <label class="order-checkbox-card" id="check-dish">
-                                <input type="checkbox" id="chk-dish" onchange="updateOrder()">
                                 <img src="images/dish-drops.jpg" alt="Dish Drops" onerror="this.style.display='none'">
                                 <span class="check-name">Dish Drops™</span>
-                                <span class="check-price">384 грн</span>
+                                <span class="check-price" data-price="384">384 грн</span>
+                                <div class="qty-control">
+                                    <button type="button" class="qty-btn" onclick="changeQty('dish', -1)">−</button>
+                                    <span class="qty-value" id="qty-dish">0</span>
+                                    <button type="button" class="qty-btn" onclick="changeQty('dish', 1)">+</button>
+                                </div>
+                            </div>
+
+                            <div class="order-checkbox-card" id="check-gh">
                                 <span class="check-mark">✓</span>
-                            </label>
-                            <label class="order-checkbox-card" id="check-gh">
-                                <input type="checkbox" id="chk-gh" onchange="updateOrder()">
                                 <img src="images/gh-deodorant.jpg" alt="g&h Дезодорант" onerror="this.style.display='none'">
                                 <span class="check-name">g&h™ Дезодорант</span>
-                                <span class="check-price">336 грн</span>
+                                <span class="check-price" data-price="336">336 грн</span>
+                                <div class="qty-control">
+                                    <button type="button" class="qty-btn" onclick="changeQty('gh', -1)">−</button>
+                                    <span class="qty-value" id="qty-gh">0</span>
+                                    <button type="button" class="qty-btn" onclick="changeQty('gh', 1)">+</button>
+                                </div>
+                            </div>
+
+                            <div class="order-checkbox-card" id="check-omega">
                                 <span class="check-mark">✓</span>
-                            </label>
-                            <label class="order-checkbox-card" id="check-omega">
-                                <input type="checkbox" id="chk-omega" onchange="updateOrder()">
                                 <img src="images/omega3.jpg" alt="Nutrilite Омега-3" onerror="this.style.display='none'">
                                 <span class="check-name">Nutrilite™ Омега-3</span>
-                                <span class="check-price">1113 грн</span>
-                                <span class="check-mark">✓</span>
-                            </label>
+                                <span class="check-price" data-price="1113">1113 грн</span>
+                                <div class="qty-control">
+                                    <button type="button" class="qty-btn" onclick="changeQty('omega', -1)">−</button>
+                                    <span class="qty-value" id="qty-omega">0</span>
+                                    <button type="button" class="qty-btn" onclick="changeQty('omega', 1)">+</button>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="order-total-row">
                             <span>Разом:</span>
@@ -461,56 +482,51 @@
         document.getElementById('copyright-year').textContent = new Date().getFullYear();
 
         // ============================================
-        // ВИБІР ТОВАРІВ — чекбокси
+        // ТОВАРИ З ЦІНАМИ
         // ============================================
-        function updateOrder() {
-            const chkGlister  = document.getElementById('chk-glister');
-            const chkDish     = document.getElementById('chk-dish');
-            const chkGh       = document.getElementById('chk-gh');
-            const chkOmega    = document.getElementById('chk-omega');
-            const cardGlister = document.getElementById('check-glister');
-            const cardDish    = document.getElementById('check-dish');
-            const cardGh      = document.getElementById('check-gh');
-            const cardOmega   = document.getElementById('check-omega');
+        const PRODUCTS = {
+            glister: { name: 'Glister™ 151 мл',         price: 243  },
+            dish:    { name: 'Dish Drops™',              price: 384  },
+            gh:      { name: 'g&h™ Дезодорант',          price: 336  },
+            omega:   { name: 'Nutrilite™ Омега-3',       price: 1113 }
+        };
 
-            cardGlister.classList.toggle('selected', chkGlister.checked);
-            cardDish.classList.toggle('selected', chkDish.checked);
-            cardGh.classList.toggle('selected', chkGh.checked);
-            cardOmega.classList.toggle('selected', chkOmega.checked);
+        // Кількість кожного товару
+        const qty = { glister: 1, dish: 0, gh: 0, omega: 0 };
 
+        function changeQty(id, delta) {
+            qty[id] = Math.max(0, qty[id] + delta);
+            document.getElementById('qty-' + id).textContent = qty[id];
+            const card = document.getElementById('check-' + id);
+            card.classList.toggle('selected', qty[id] > 0);
+            updateTotal();
+        }
+
+        function updateTotal() {
             let total = 0;
-            const items = [];
-            if (chkGlister.checked) { total += 243;  items.push('Glister™ — 243 грн'); }
-            if (chkDish.checked)    { total += 384;  items.push('Dish Drops™ — 384 грн'); }
-            if (chkGh.checked)      { total += 336;  items.push('g&h™ Дезодорант — 336 грн'); }
-            if (chkOmega.checked)   { total += 1113; items.push('Nutrilite™ Омега-3 — 1113 грн'); }
-
+            Object.keys(qty).forEach(id => {
+                total += qty[id] * PRODUCTS[id].price;
+            });
             document.getElementById('orderTotal').textContent = total ? total + ' грн' : '0 грн';
         }
 
         function selectProduct(type) {
-            document.getElementById('chk-glister').checked = (type === 'glister');
-            document.getElementById('chk-dish').checked    = (type === 'dish');
-            document.getElementById('chk-gh').checked      = (type === 'gh');
-            document.getElementById('chk-omega').checked   = (type === 'omega');
-            updateOrder();
+            // При кліку "Замовити" на картці — додаємо 1 якщо ще 0
+            if (qty[type] === 0) changeQty(type, 1);
+            updateTotal();
         }
 
         // Ініціалізація
-        updateOrder();
+        updateTotal();
+        document.getElementById('check-glister').classList.add('selected');
 
         // ============================================
-        // ВІДПРАВКА ФОРМИ — передаємо вибрані товари
+        // ВІДПРАВКА ФОРМИ
         // ============================================
-        // Перехоплюємо submit щоб додати вибрані товари в orderData
-        // (основний обробник в script.js, але ми розширюємо його через CustomEvent)
-        document.getElementById('orderForm').addEventListener('submit', function() {
-            const chkGlister = document.getElementById('chk-glister').checked;
-            const chkDish    = document.getElementById('chk-dish').checked;
-            const chkGh      = document.getElementById('chk-gh').checked;
-            const chkOmega   = document.getElementById('chk-omega').checked;
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            const hasItems = Object.keys(qty).some(id => qty[id] > 0);
 
-            if (!chkGlister && !chkDish && !chkGh && !chkOmega) {
+            if (!hasItems) {
                 document.getElementById('orderSelectError').style.display = 'block';
                 event.preventDefault();
                 return;
@@ -518,33 +534,32 @@
             document.getElementById('orderSelectError').style.display = 'none';
 
             const items = [];
-            if (chkGlister) items.push('Glister™ 151 мл — 243 грн');
-            if (chkDish)    items.push('Dish Drops™ — 384 грн');
-            if (chkGh)      items.push('g&h™ Дезодорант — 336 грн');
-            if (chkOmega)   items.push('Nutrilite™ Омега-3 — 1113 грн');
-            const total = (chkGlister ? 243 : 0) + (chkDish ? 384 : 0) + (chkGh ? 336 : 0) + (chkOmega ? 1113 : 0);
+            let total = 0;
+            Object.keys(qty).forEach(id => {
+                if (qty[id] > 0) {
+                    const p = PRODUCTS[id];
+                    const sum = qty[id] * p.price;
+                    total += sum;
+                    items.push(`${p.name} × ${qty[id]} = ${sum} грн`);
+                }
+            });
 
-            // Додаємо приховані поля для script.js
             let pn = document.getElementById('_selectedProducts');
             if (!pn) {
                 pn = document.createElement('input');
-                pn.type = 'hidden';
-                pn.name = 'product_name';
-                pn.id   = '_selectedProducts';
+                pn.type = 'hidden'; pn.name = 'product_name'; pn.id = '_selectedProducts';
                 this.appendChild(pn);
             }
-            pn.value = items.join(' + ');
+            pn.value = items.join(' | ');
 
             let pp = document.getElementById('_selectedPrice');
             if (!pp) {
                 pp = document.createElement('input');
-                pp.type = 'hidden';
-                pp.name = 'product_price';
-                pp.id   = '_selectedPrice';
+                pp.type = 'hidden'; pp.name = 'product_price'; pp.id = '_selectedPrice';
                 this.appendChild(pp);
             }
             pp.value = total + ' грн';
-        }, true); // true = перехоплюємо ДО обробника в script.js
+        }, true);
     </script>
 
     <style>
@@ -649,19 +664,13 @@
         .order-checkbox-card {
             border: 2px solid #e0e0e0;
             border-radius: 16px;
-            padding: 16px;
+            padding: 14px 12px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            cursor: pointer;
             position: relative;
             transition: border-color 0.2s, background 0.2s;
             user-select: none;
-        }
-        .order-checkbox-card input[type="checkbox"] {
-            position: absolute;
-            opacity: 0;
-            width: 0; height: 0;
         }
         .order-checkbox-card img {
             width: 80px;
@@ -670,27 +679,29 @@
             margin-bottom: 8px;
         }
         .check-name {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
             color: #1a1a2e;
             margin-bottom: 4px;
+            text-align: center;
         }
         .check-price {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 800;
             color: #00a8e8;
+            margin-bottom: 10px;
         }
         .check-mark {
             display: none;
             position: absolute;
-            top: 10px;
-            right: 12px;
+            top: 8px;
+            right: 10px;
             background: #00a8e8;
             color: #fff;
             border-radius: 50%;
-            width: 22px;
-            height: 22px;
-            font-size: 13px;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
             align-items: center;
             justify-content: center;
         }
@@ -701,6 +712,42 @@
         .order-checkbox-card.selected .check-mark {
             display: flex;
         }
+
+        /* Кнопки + і − */
+        .qty-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 4px;
+        }
+        .qty-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid #00a8e8;
+            background: #fff;
+            color: #00a8e8;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.15s, color 0.15s;
+        }
+        .qty-btn:hover {
+            background: #00a8e8;
+            color: #fff;
+        }
+        .qty-value {
+            font-size: 18px;
+            font-weight: 800;
+            color: #1a1a2e;
+            min-width: 20px;
+            text-align: center;
+        }
+
         .order-total-row {
             display: flex;
             justify-content: space-between;

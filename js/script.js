@@ -51,16 +51,17 @@ async function sendToTelegram(orderData) {
         const message = `
 🎉 НОВЕ ЗАМОВЛЕННЯ #${orderId}
 
-📦 Товар: ${orderData.productName}
-💰 Ціна: ${orderData.productPrice}
+🛒 Замовлення:
+${orderData.productName.split(' + ').map(item => `  • ${item}`).join('\n')}
+
+💰 Загальна сума: ${orderData.productPrice}
 
 👤 Клієнт:
 • Ім'я: ${orderData.customerName}
 • Телефон: ${orderData.customerPhone}
 • 📮 Відділення НП: ${orderData.customerNovaPoshta}
 
-${orderData.customerOtherProduct !== 'Не вказано' ? `📝 Додатковий товар:\n${orderData.customerOtherProduct}\n` : ''}
-💝 Доставка НП - комплімент від нас!
+${orderData.customerOtherProduct !== 'Не вказано' ? `💬 Коментар: ${orderData.customerOtherProduct}\n` : ''}💝 Доставка НП - комплімент від нас!
 
 📅 Дата: ${orderData.orderDate}
         `.trim();
@@ -99,6 +100,10 @@ orderForm.addEventListener('submit', async function(e) {
     const novaposhta = this.novaposhta.value.trim();
     const otherProduct = this.other_product.value.trim();
 
+    // Читаємо вибрані товари та суму з прихованих полів (заповнюються в index.html)
+    const selectedProducts = (this.querySelector('[name="product_name"]') || {}).value || 'Не вказано';
+    const selectedPrice    = (this.querySelector('[name="product_price"]') || {}).value || '0 грн';
+
     const submitBtn = this.querySelector('.btn-submit');
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Відправляємо...';
@@ -109,15 +114,15 @@ orderForm.addEventListener('submit', async function(e) {
         customer_phone: phone,
         customer_novaposhta: novaposhta,
         customer_other_product: otherProduct || 'Не вказано',
-        product_name: 'Зубна паста Glister',
-        product_price: '243 грн',
+        product_name: selectedProducts,
+        product_price: selectedPrice,
         order_date: new Date().toLocaleString('uk-UA'),
         customerName: name,
         customerPhone: phone,
         customerNovaPoshta: novaposhta,
         customerOtherProduct: otherProduct || 'Не вказано',
-        productName: 'Зубна паста Glister',
-        productPrice: '243 грн',
+        productName: selectedProducts,
+        productPrice: selectedPrice,
         orderDate: new Date().toLocaleString('uk-UA')
     };
 
